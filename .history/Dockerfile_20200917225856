@@ -1,0 +1,11 @@
+FROM node:alpine as builder
+
+WORKDIR /app
+
+COPY package.sjon .
+RUN npm install 
+
+COPY . .
+
+CMD npm run build
+
